@@ -69,7 +69,39 @@
  * @param {string} s
  * @return {number}
  */
-var romanToInt = function(s) {
-    
+/**
+ * 注意下这句话，并且注意关系。
+ * I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。
+ * X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。 
+ * C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。}
+ */
+var romanToInt = function (s) {
+    let result = 0;
+    if (s.includes('IV') || s.includes('IX')) result -= 2;
+    if (s.includes('XL') || s.includes('XC')) result -= 20;
+    if (s.includes('CD') || s.includes('CM')) result -= 200;
+
+    for (let c of s) { 
+        switch (c) {
+            case 'I':
+                result += 1; break;
+            case 'V':
+                result += 5; break;
+            case 'X':
+                result += 10; break;
+            case 'L':
+                result += 50; break;
+            case 'C':
+                result += 100; break;
+            case 'D':
+                result += 500; break;
+            case 'M':
+                result += 1000; break;
+            default:
+                break;
+        }
+    }
+
+    return result;
 };
 

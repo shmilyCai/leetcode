@@ -37,7 +37,26 @@
  * @param {string[]} strs
  * @return {string}
  */
-var longestCommonPrefix = function(strs) {
-    
+var longestCommonPrefix = function (strs) {
+
+    var result = '';
+    if (strs.length === 0) {  //判断为空或者只有1个字符串的时候
+        return result
+    } else if (strs.length === 1) {
+        return result = strs[0];
+    }
+
+    var temp = strs[0];
+    for(var i = 0; i < temp.length; i++){ //循环第一个字符串
+        for(var j = 1; j < strs.length; j++){ //循环字符串数组
+            if(temp[i] != strs[j][i]){ //如果不相等了，则说明不同
+                return result
+            }
+        }
+        result += temp[i];  //将相等的值，赋值给result
+    }
+
+    return result;
+
 };
 

@@ -55,7 +55,19 @@
  * @param {number[]} nums
  * @return {number}
  */
-var removeDuplicates = function(nums) {
-    
+/**注意事项：
+ * 1. 给出的数组是已经排序后的数组
+ * 2. 在原数组上进行删除
+ */
+var removeDuplicates = function (nums) {
+    var k = 1;   
+    for (var i = 0; i < nums.length - 1; i++) {
+        if (nums[i + 1] != nums[i]) { //因为已经是排序后的数组，将数组中的后一位与前一位进行比较，
+            nums[k] = nums[i + 1];  // 若相等，向后移动，若不等，就赋值给k
+            k++;
+        }
+    }
+    return k;
+
 };
 
