@@ -36,7 +36,11 @@
  * @param {number} n
  * @return {void} Do not return anything, modify nums1 in-place instead.
  */
-var merge = function(nums1, m, nums2, n) {
-    
+/** 看题，数组保存再nums1中 */
+var merge = function (nums1, m, nums2, n) {
+    nums1.splice(m);  //splice参数只有m时候，保留原数组的前m项
+    nums2.splice(n);
+    nums1.push(...nums2); //合并数组
+    nums1.sort((a, b) => a - b); //sort是排序方法，可传入函数
 };
 

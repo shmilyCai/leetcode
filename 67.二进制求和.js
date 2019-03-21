@@ -31,6 +31,7 @@
  * @param {string} b
  * @return {string}
  */
+// 看不懂
 var addBinary = function(a, b) {
     
 };

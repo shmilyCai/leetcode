@@ -36,7 +36,23 @@
  * @param {number[]} digits
  * @return {number[]}
  */
-var plusOne = function(digits) {
-    
+var plusOne = function (digits) {
+
+    var len = digits.length;
+
+        /**退出当前循环的条件是当前位不为9，或者需要扩位 */
+    for (let i = len - 1; i > -1; i--) {
+        if (digits[i] < 9) { //当前位不为9
+            digits[i]++;
+            return digits;
+        } else {
+            digits[i] = 0;
+        }
+    }
+    return [1, ...digits]; //解构赋值的写法，当前需要扩位了，
+
 };
+
+var t = [4, 3, 2, 1];
+plusOne(t);
 

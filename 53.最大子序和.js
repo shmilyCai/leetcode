@@ -29,6 +29,7 @@
  * @param {number[]} nums
  * @return {number}
  */
+//有些时候真的想的太复杂了。
 var maxSubArray = function (nums) {
     var sum = 0;
     var max = nums[0];

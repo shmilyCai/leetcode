@@ -36,7 +36,10 @@
  * @param {number} x
  * @return {number}
  */
+/**注意题目中的向下取整， 平方根算数Math中存在 */
+/**ES6 中的 ** 为指数操作符 */
 var mySqrt = function(x) {
-    
+    // return  Math.floor(Math.sqrt(x));
+    return  Math.floor(x ** 0.5);
 };
 
