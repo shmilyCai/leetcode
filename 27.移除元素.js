@@ -62,6 +62,17 @@
  * @return {number}
  */
 var removeElement = function(nums, val) {
-    
+    var len = nums.length; // 不能将num.length放在循环里面，因为nums的长度是在随时变化的。
+    for(var i = 0; i < len; i++){
+        var index = nums.indexOf(val);
+        if(index > -1){
+            nums.splice(index, 1);
+        }
+    }
+    return nums.length;
 };
 
+// var nums = [0,1,2,2,3,0,4,2];
+// var  val = 2;
+
+// removeElement(nums, val);

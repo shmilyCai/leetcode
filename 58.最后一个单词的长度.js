@@ -28,7 +28,10 @@
  * @param {string} s
  * @return {number}
  */
-var lengthOfLastWord = function(s) {
-    
+// 这道题其实很简单，必须先除掉2边的空格，再根据空格进行分割，返回最后一个的长度
+var lengthOfLastWord = function (s) {
+    var str = s.trim().split(' ');
+    var len = str.length;
+    return str[len - 1].length;
 };
 

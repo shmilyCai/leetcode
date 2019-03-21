@@ -47,6 +47,7 @@
  * @param {number} n
  * @return {string}
  */
+// 这个看起来好难哦
 var countAndSay = function(n) {
     
 };

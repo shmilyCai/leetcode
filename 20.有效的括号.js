@@ -56,7 +56,41 @@
  * @param {string} s
  * @return {boolean}
  */
-var isValid = function(s) {
-    
+var isValid = function (s) {
+    var stack = [];
+    for (var i = 0; i < s.length; i++) {
+        switch (s[i]) {
+            case '{':
+                stack.push(s[i]);
+                break;
+            case '}':
+                if (stack.pop() !== '{') {
+                    return false;
+                }
+                break;
+            case '[':
+                stack.push(s[i]);
+                break;
+            case ']':
+                if (stack.pop() !== '[') {
+                    return false;
+                }
+                break;
+            case '(':
+                stack.push(s[i]);
+                break;
+            case ')':
+                if (stack.pop() !== '(') {
+                    return false;
+                }
+                break;
+        }
+    }
+
+    if (stack.length != 0) {
+        return false;
+    } else {
+        return true;
+    }
 };
 

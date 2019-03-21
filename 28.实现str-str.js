@@ -40,7 +40,10 @@
  * @param {string} needle
  * @return {number}
  */
-var strStr = function(haystack, needle) {
-    
+// 我只想说这道题真的太简单了，
+// 这道题用了js的indexof方法，如果不使用了
+// 只求代码最精简，
+var strStr = function (haystack, needle) {
+    return needle.length > 0 ? haystack.indexOf(needle) : 0;
 };
 
