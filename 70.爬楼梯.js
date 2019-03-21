@@ -40,7 +40,16 @@
  * @param {number} n
  * @return {number}
  */
-var climbStairs = function(n) {
-    
+/**
+ * 
+ * 斐波那契数列
+ * f(n) = f(n-1) + f(n-2)
+ */
+var climbStairs = function (n) {
+    let a = b = 1;
+    for (let i = 0; i < n; i++) {
+        [a, b] = [b, a + b]
+    }
+    return a;
 };
 

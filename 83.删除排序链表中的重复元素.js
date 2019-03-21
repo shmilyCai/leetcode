@@ -36,7 +36,21 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
+/**
+ * 
+ * 注意：给定的是排序的链表
+ */
 var deleteDuplicates = function(head) {
-    
+    var list = head;
+    if(list === null) return null;  //先判断链表是否为空
+
+    while(list.next != null){  // 当链表中存在下一个时，开始循环
+        if(list.val == list.next.val){ //如果相等，
+            list.next = list.next.next; //移除相同的
+        }else{
+            list = list.next; 
+        }
+    }
+    return head;
 };
 

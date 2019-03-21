@@ -71,8 +71,3 @@ var removeElement = function(nums, val) {
     }
     return nums.length;
 };
-
-// var nums = [0,1,2,2,3,0,4,2];
-// var  val = 2;
-
-// removeElement(nums, val);

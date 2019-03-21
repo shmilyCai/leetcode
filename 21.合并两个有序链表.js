@@ -32,7 +32,19 @@
  * @param {ListNode} l2
  * @return {ListNode}
  */
+/**
+ * 这道题的解法，没有看明白，看来是采用的递归方法
+ */
 var mergeTwoLists = function(l1, l2) {
-    
+    if(l1 == null) return l2;
+    if(l2 == null) return l1;
+
+    if(l1.val < l2.val){ //判断2个链表中的val是否相等
+        l1.next = mergeTwoLists(l1.next, l2);
+        return l1;
+    }else{
+        l2.next = mergeTwoLists(l1, l2.next);
+        return l2;
+    }
 };
 
