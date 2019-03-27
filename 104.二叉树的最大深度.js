@@ -40,7 +40,15 @@
  * @param {TreeNode} root
  * @return {number}
  */
-var maxDepth = function(root) {
-    
+var maxDepth = function (root) {
+    if (root === null) { //判断是否为空
+        return 0;
+    } else {
+        var leftDepth = maxDepth(root.left),
+            rightDepth = maxDepth(root.right);
+        var childDepth = leftDepth > rightDepth ? leftDepth : rightDepth; //取返回最大的值
+        return 1 + childDepth; 
+    }
+
 };
 

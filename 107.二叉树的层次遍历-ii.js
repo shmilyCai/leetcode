@@ -45,6 +45,9 @@
  * @return {number[][]}
  */
 var levelOrderBottom = function(root) {
+    var result = [];
+    var que = [];
+    if(root) result.push(que);
     
 };
 

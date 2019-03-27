@@ -47,7 +47,28 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
-var isSymmetric = function(root) {
-    
+var isSymmetric = function (root) {
+
+    if (root === null) { // 先判断root是否为空
+        return true;
+    }
+
+    function check(left, right) {
+        if (left === null && right === null) { //判断子节点都为空
+            return true
+        } else if (left !== null && right !== null) { //判断子节点都不为空
+            if (left.val !== right.val) {
+                return false
+            } else {
+                return check(left.left, right.right) && check(left.right, right.left); //注意分析题目
+            }
+        } else {
+            return false;
+        }
+    }
+
+    return check(root.left, root.right); // 循环
+
+
 };
 
